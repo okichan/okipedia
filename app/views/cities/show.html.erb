@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @city.name %>
+</p>
+
+<p>
+  <strong>Country code:</strong>
+  <%= @city.country_code %>
+</p>
+
+<p>
+  <strong>Minimum temp:</strong>
+  <%= @temp_min %>°C
+</p>
+
+<p>
+  <strong>Maximum temp:</strong>
+  <%= @temp_max %>°C
+</p>
+
+<p>
+  <strong>kelvin convert max temp:</strong>
+  <%= convert_celcius(@temp_max_kelvin) %>
+</p>
+
+<p>
+  <strong>Humidity:</strong>
+  <%= @humidity %>%
+</p>
+
+<p>
+  <strong>Pressure:</strong>
+  <%= @pressure %>hpa
+</p>
+
+
+
+<%= link_to 'Edit', edit_city_path(@city) %> |
+<%= link_to 'Back', cities_path %>

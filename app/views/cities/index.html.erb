@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Okipedia</h1>
+<br>
+
+<%= form_with url: cities_path, local: true, method: :get do |f| %>
+  <%= f.text_field :query %>
+  <%= f.submit 'Search' %>
+<% end %>
+<br>
+<strong>What is <%= @page.title %>?</strong>
+<% if @page.main_image_url.present? %>
+  <figure><%= image_tag @page.main_image_url, width: 220 %></figure>
+<% else %>
+  <p>(no image)</p>
+<% end %>
+<p><%= @page.summary %></p>
+<%= link_to 'Read more', "https://en.wikipedia.org/wiki/#{@page.title}", target: 'blank' %>
+
+<br>
+<br>
+<br>
+
+<%# link_to 'New City', new_city_path %>
